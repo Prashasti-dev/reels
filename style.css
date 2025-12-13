@@ -22,24 +22,36 @@ section {
     background-color: black;
     border-radius: 20px;
     margin: auto;
+    overflow: hidden;
 
-    overflow-y: scroll;   /* ✅ THIS IS IMPORTANT */
 }
 
 
 .all-reels{
     height: 100%;
     width: 100%;
-    
+    overflow: auto;
+    /* snapping Scroll karo
+Screen ek reel pe hi ruk jaati hai, beech mein nahi*/
+    scroll-snap-type:  y mandatory;
+    scroll-behavior: smooth;
 }
+.all-reels::-webkit-scrollbar{
+    /* hide scrollbar */
+    display: none;
+}
+
 .reel{
     height: 100%;
     width: 100%;
     position: relative;
-  
+  overflow: hidden;
     border-radius: 10px;
+    margin-bottom:0;
+    scroll-snap-align: start;
+    scroll-snap-stop:always;
 }
-.reel img{
+.reel video{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -84,7 +96,7 @@ section {
 }
 
 .right{
-    padding: 30px;
+    padding: 35px;
          display: flex;
      flex-direction: column;
        gap: 10px;
@@ -93,9 +105,11 @@ section {
     width: 20px;
     position: absolute;
     right: 0;
-    bottom: 0;
-  
+    bottom: 70px;
 color: aliceblue;
+}
+.right h4{
+    cursor: pointer;
 }
 .right i{
 font-size: 25px;
