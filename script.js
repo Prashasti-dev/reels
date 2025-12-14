@@ -16,7 +16,7 @@ const reels = [
     isLiked: true,
     commentCount: 180,
     caption: "Street food supremacy 😋🔥",
-    video: "",
+    video: "./video/vdo2.mp4",
     userprofile: "https://randomuser.me/api/portraits/men/32.jpg",
     shareCount: 95,
     isFollowed: true
@@ -27,7 +27,7 @@ const reels = [
     isLiked: false,
     commentCount: 410,
     caption: "Consistency > Motivation 💪",
-    video: "",
+    video: "./video/video4.mp4",
     userprofile: "https://randomuser.me/api/portraits/women/68.jpg",
     shareCount: 330,
     isFollowed: false
@@ -38,7 +38,7 @@ const reels = [
     isLiked: false,
     commentCount: 75,
     caption: "This shortcut changed my workflow 🚀",
-    video: "",
+    video: "/video/video3.mp4",
     userprofile: "https://randomuser.me/api/portraits/men/76.jpg",
     shareCount: 60,
     isFollowed: false
@@ -49,7 +49,7 @@ const reels = [
     isLiked: true,
     commentCount: 265,
     caption: "A normal day but make it aesthetic ✨",
-    video: "",
+    video: "/video/video5.mp4",
     userprofile: "https://randomuser.me/api/portraits/women/12.jpg",
     shareCount: 140,
     isFollowed: true
@@ -60,7 +60,7 @@ const reels = [
     isLiked: false,
     commentCount: 560,
     caption: "Headphones on, world off 🎧",
-    video: "",
+    video: "/video/video3.mp4",
     userprofile: "https://randomuser.me/api/portraits/men/21.jpg",
     shareCount: 480,
     isFollowed: false
@@ -71,7 +71,7 @@ const reels = [
     isLiked: false,
     commentCount: 120,
     caption: "Trust the process 🎨",
-    video: "",
+    video: "/video/video6.mp4",
     userprofile: "https://randomuser.me/api/portraits/women/34.jpg",
     shareCount: 88,
     isFollowed: false
@@ -82,7 +82,7 @@ const reels = [
     isLiked: true,
     commentCount: 290,
     caption: "DSA is hard until it clicks 😄",
-    video: "",
+    video: "https://www.pexels.com/download/video/35194304/",
     userprofile: "https://randomuser.me/api/portraits/men/55.jpg",
     shareCount: 190,
     isFollowed: true
@@ -93,7 +93,7 @@ const reels = [
     isLiked: false,
     commentCount: 340,
     caption: "Simple outfits > loud trends 👗",
-    video: "",
+    video: "https://www.pexels.com/download/video/35120301/",
     userprofile: "https://randomuser.me/api/portraits/women/9.jpg",
     shareCount: 260,
     isFollowed: false
@@ -104,7 +104,7 @@ const reels = [
     isLiked: true,
     commentCount: 620,
     caption: "Just nature doing its thing 🌿",
-    video: "",
+    video: "./video/video1.mp4",
     userprofile: "https://randomuser.me/api/portraits/men/5.jpg",
     shareCount: 540,
     isFollowed: true
@@ -137,7 +137,7 @@ reels.forEach(function(elem){
                         </div>
                           <div class="share">
                             <h4 class="share-icon icon"><i class="ri-share-forward-line"></i></h4>
-                            <h6>${elem.shareCount}</h6>
+                            <h6>${elem.shareCount}</h6>0
                         </div>
                         <div class="menu">
                             <h4 class="menu-icon icon"><i class="ri-more-2-fill"></i></h4>
