@@ -3,11 +3,13 @@ const reels = [
     username: "travelwithanaya",
     likeCount: 12450,
     isLiked: true,
+    isComment: true,
     commentCount: 320,
     caption: "Sunsets hit different when you’re somewhere new 🌅",
     video: "./video/video1.mp4",
     userprofile: "https://randomuser.me/api/portraits/women/45.jpg",
     shareCount: 210,
+    isShared:false,
     isFollowed: false
   },
   {
@@ -15,32 +17,39 @@ const reels = [
     likeCount: 8920,
     isLiked: true,
     commentCount: 180,
+    isComment: false,
     caption: "Street food supremacy 😋🔥",
     video: "https://www.pexels.com/download/video/35043783/",
     userprofile: "https://randomuser.me/api/portraits/men/32.jpg",
     shareCount: 95,
+    isShared:true,
     isFollowed: true
   },
   {
     username: "fitwithneha",
     likeCount: 15600,
     isLiked: false,
+    isComment: true,
     commentCount: 410,
     caption: "Consistency > Motivation 💪",
     video: "./video/video4.mp4",
     userprofile: "https://randomuser.me/api/portraits/women/68.jpg",
     shareCount: 330,
+    isShared:false,
     isFollowed: false
+
   },
   {
     username: "techbyarjun",
     likeCount: 4300,
     isLiked: false,
+    isComment: true,
     commentCount: 75,
     caption: "This shortcut changed my workflow 🚀",
     video: "/video/video3.mp4",
     userprofile: "https://randomuser.me/api/portraits/men/76.jpg",
     shareCount: 60,
+    isShared:true,
     isFollowed: false
   },
   {
@@ -48,21 +57,25 @@ const reels = [
     likeCount: 9850,
     isLiked: true,
     commentCount: 265,
+    isComment: false,
     caption: "A normal day but make it aesthetic ✨",
     video: "/video/video5.mp4",
     userprofile: "https://randomuser.me/api/portraits/women/12.jpg",
     shareCount: 140,
+    isShared:true,
     isFollowed: true
   },
   {
     username: "musicwithsam",
     likeCount: 20300,
     isLiked: false,
+    isComment: false,
     commentCount: 560,
     caption: "Headphones on, world off 🎧",
     video: "/video/video3.mp4",
     userprofile: "https://randomuser.me/api/portraits/men/21.jpg",
     shareCount: 480,
+    isShared:true,
     isFollowed: false
   },
   {
@@ -70,10 +83,12 @@ const reels = [
     likeCount: 6750,
     isLiked: false,
     commentCount: 120,
+    isComment: true,
     caption: "Trust the process 🎨",
     video: "/video/video6.mp4",
     userprofile: "https://randomuser.me/api/portraits/women/34.jpg",
     shareCount: 88,
+    isShared:false,
     isFollowed: false
   },
   {
@@ -81,10 +96,12 @@ const reels = [
     likeCount: 11200,
     isLiked: true,
     commentCount: 290,
+    isComment: false,
     caption: "DSA is hard until it clicks 😄",
     video: "https://www.pexels.com/download/video/35194304/",
     userprofile: "https://randomuser.me/api/portraits/men/55.jpg",
     shareCount: 190,
+    isShared:true,
     isFollowed: true
   },
   {
@@ -183,21 +200,21 @@ if(dets.target.className=='follow'){
 
 
 if(dets.target.className=='comment'){
-  if(!reels[dets.target.id].isLiked){
+  if(!reels[dets.target.id].isComment){
   reels[dets.target.id].commentCount++;
-  reels[dets.target.id].isLiked=true;
+  reels[dets.target.id].isComment=true;
 }else{
    reels[dets.target.id].commentCount--;
-  reels[dets.target.id].isLiked=false;
+  reels[dets.target.id].isComment=false;
 }
 }
 if(dets.target.className=='share'){
-  if(!reels[dets.target.id].isLiked){
+  if(!reels[dets.target.id].isShared){
   reels[dets.target.id].shareCount++;
-  reels[dets.target.id].isLiked=true;
+  reels[dets.target.id].isShared=true;
 }else{
    reels[dets.target.id].shareCount--;
-  reels[dets.target.id].isLiked=false;
+  reels[dets.target.id].isShared=false;
 }
 }
 
