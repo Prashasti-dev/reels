@@ -16,7 +16,7 @@ const reels = [
     isLiked: true,
     commentCount: 180,
     caption: "Street food supremacy 😋🔥",
-    video: "./video/vdo2.mp4",
+    video: "https://www.pexels.com/download/video/35043783/",
     userprofile: "https://randomuser.me/api/portraits/men/32.jpg",
     shareCount: 95,
     isFollowed: true
@@ -110,9 +110,11 @@ const reels = [
     isFollowed: true
   }
 ];
+let allreels=document.querySelector('.all-reels');
 
-let sum='';
-reels.forEach(function(elem){
+function addData(){
+  let sum='';
+reels.forEach(function(elem,idx){
     // console.log(elem.commentCount);
     sum=sum+`<div class="reel">
                   <video autoplay loop muted src="${elem.video}"></video>
@@ -120,24 +122,24 @@ reels.forEach(function(elem){
                         <div class="user">
                             <img src="${elem.userprofile}" alt="">
                             <h4>${elem.username}</h4>
-                            <button>${elem.isFollowed?'Unfollow':'Follow'}</button>
+                            <button id="${idx}" class='follow'>${elem.isFollowed?'Unfollow':'Follow'}</button>
                         </div>
                         <h3>${elem.caption}</h3>
                     </div>
                     <div class="right">
-                        <div class="like">
+                        <div id="${idx}" class="like">
                         <h4 class="like-icon icon" style="color:${elem.isLiked ? 'red' : 'white'};">
                               ${elem.isLiked ? '<i class="like ri-heart-fill"></i>' : '<i class="ri-heart-line"></i>'}
                           </h4>
                              <h6>${elem.likeCount}</h6>
                         </div>
-                    <div class="comment">
+                    <div id="${idx}" class="comment">
                             <h4 class="comment-icon icon"><i class="ri-chat-ai-line"></i></h4>
                             <h6>${elem.commentCount}</h6>
                         </div>
-                          <div class="share">
+                          <div id="${idx}" class="share">
                             <h4 class="share-icon icon"><i class="ri-share-forward-line"></i></h4>
-                            <h6>${elem.shareCount}</h6>0
+                            <h6>${elem.shareCount}</h6>
                         </div>
                         <div class="menu">
                             <h4 class="menu-icon icon"><i class="ri-more-2-fill"></i></h4>
@@ -145,7 +147,60 @@ reels.forEach(function(elem){
                     </div>
                 </div>`
 })
-console.log(sum);
 
-let allreels=document.querySelector('.all-reels');
+
 allreels.innerHTML=sum;
+}
+addData();
+
+allreels.addEventListener('click',function(dets){
+// if( !reels[dets.target.id].isLiked){
+//   reels[dets.target.id].likeCount++;
+//   reels[dets.target.id].isLiked=true;
+// }else{
+//    reels[dets.target.id].likeCount--;
+//   reels[dets.target.id].isLiked=false;
+// }
+
+if(dets.target.className== 'like'){
+  if( !reels[dets.target.id].isLiked){
+  reels[dets.target.id].likeCount++;
+  reels[dets.target.id].isLiked=true;
+}else{
+   reels[dets.target.id].likeCount--;
+  reels[dets.target.id].isLiked=false;
+}
+}
+
+if(dets.target.className=='follow'){
+  if(!reels[dets.target.id].isFollowed){
+    reels[dets.target.id].isFollowed=true;
+  }
+  else{
+    reels[dets.target.id].isFollowed=false;
+  }
+}
+
+
+if(dets.target.className=='comment'){
+  if(!reels[dets.target.id].isLiked){
+  reels[dets.target.id].commentCount++;
+  reels[dets.target.id].isLiked=true;
+}else{
+   reels[dets.target.id].commentCount--;
+  reels[dets.target.id].isLiked=false;
+}
+}
+if(dets.target.className=='share'){
+  if(!reels[dets.target.id].isLiked){
+  reels[dets.target.id].shareCount++;
+  reels[dets.target.id].isLiked=true;
+}else{
+   reels[dets.target.id].shareCount--;
+  reels[dets.target.id].isLiked=false;
+}
+}
+
+  addData()
+  
+})
